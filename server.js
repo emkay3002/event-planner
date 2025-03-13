@@ -5,8 +5,8 @@ require("dotenv").config();
 
 const path = require("path");
 
-const authRoutes = require(path.join(__dirname, "routes", "authRoutes"));
-const eventRoutes = require(path.join(__dirname, "routes", "eventRoutes"));
+const authRoutes = require("./routes/authRoutes");
+const eventRoutes = require("./routes/eventRoutes");
 
 const app = express();
 app.use(express.json());
