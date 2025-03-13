@@ -2,7 +2,6 @@ const cron = require("node-cron");
 const Event = require("../models/eventModel");
 const User = require("../models/userModel");
 const { sendReminderEmail } = require("../utils/emailService");
-const { checkReminders } = require("../utils/emailService");
 
 if (process.env.NODE_ENV !== "test") {
   cron.schedule("* * * * *", checkReminders);
