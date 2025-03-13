@@ -5,7 +5,7 @@ require("dotenv").config();
 
 // Import routes
 const userRoutes = require("./routes/userRoutes");
-
+const eventRoutes = require("./routes/eventRoutes");
 const app = express();
 
 // Middleware
@@ -14,7 +14,7 @@ app.use(cors());
 
 // Routes
 app.use("/api/auth", userRoutes);
-
+app.use("/api/events", eventRoutes);
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI, {
