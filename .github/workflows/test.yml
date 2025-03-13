@@ -11,9 +11,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: event-planner
 
     services:
       mongodb:
@@ -37,6 +34,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
+      - name: Debug Working Directory
+        run: pwd
 
       - name: Install Dependencies
         run: npm install
