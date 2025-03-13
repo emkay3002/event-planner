@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 require("./services/reminderService");
+require("dotenv").config({
+  path: process.env.NODE_ENV === "test" ? ".env.test" : ".env",
+});
 const DB_URI =
   process.env.NODE_ENV === "test"
     ? process.env.TEST_MONGO_URI

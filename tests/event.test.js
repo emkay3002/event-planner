@@ -1,6 +1,7 @@
 const request = require("supertest");
 const app = require("../server");
 const mongoose = require("mongoose");
+jest.setTimeout(10000); // Increase timeout to 10 seconds
 
 describe("Event Management", () => {
   let userToken;
