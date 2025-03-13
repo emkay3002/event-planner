@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 require("./services/reminderService");
+const DB_URI =
+  process.env.NODE_ENV === "test"
+    ? process.env.TEST_MONGO_URI
+    : process.env.MONGO_URI;
 // Import routes
 const userRoutes = require("./routes/userRoutes");
 const eventRoutes = require("./routes/eventRoutes");
@@ -18,7 +22,7 @@ app.use("/api/events", eventRoutes);
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(DB_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error(err));
 
