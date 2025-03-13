@@ -28,6 +28,6 @@ describe("User Authentication", () => {
   });
 
   afterAll(async () => {
-    await mongoose.connection.close();
+    await mongoose.connection.close(); // Ensures database connection is closed
   });
 });
