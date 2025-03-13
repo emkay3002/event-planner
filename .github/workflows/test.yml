@@ -19,11 +19,11 @@ jobs:
           - 27017:27017
 
     env:
-      MONGO_URI: mongodb://localhost:27017/testdb
+      TEST_MONGO_URI: mongodb://localhost:27017/testdb
       JWT_SECRET: testsecret
       EMAIL_USER: test@example.com
       EMAIL_PASS: testpassword
-      PORT: 5001
+      PORT: 5000
       NODE_ENV: test
 
     steps:
